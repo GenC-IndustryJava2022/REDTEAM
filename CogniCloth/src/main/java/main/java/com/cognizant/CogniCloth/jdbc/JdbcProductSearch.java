@@ -47,9 +47,39 @@ public class JdbcProductSearch implements ProductDao
 		
 	}
 		
-	public void delete(Product p) {}
-		
+	public void delete(Product p) throws ClassNotFoundException, SQLException {
+		try { 
+			Connection con = DBConnection.getConnection();
+			Statement smt = con.createStatement();
+			String sql = "DELETE FROM Products WHERE productName LIKE %" + p.getProductName() + "%";
+			ResultSet r = smt.executeQuery(sql);
+		}
+		catch(SQLException e ) {
+			e.printStackTrace();
+		}
 	}
-	
 
+	public void remove(Product p) throws ClassNotFoundException, SQLException {
+		try {    
+			Connection con = DBConnection.getConnection();
+			Statement smt = con.createStatement();
+			String sql = "SELECT * FROM Products WHERE productName NOT LIKE %" + p.getProductName() + "%";
+			ResultSet r = smt.executeQuery(sql);
+			StringBuilder sb = new StringBuilder();
+		
+			while (r.next()) {
+				String productName = r.getString("productName");
+				sb.append(productName);
+				sb.append(", ");
+			}
+			sb.delete(sb.length()-2, sb.length());
+			System.out.println(sb.toString());
+		}
+		catch(SQLException e ){
+			e.printStackTrace();
+		}
+	}
+}
+	
+	
 
