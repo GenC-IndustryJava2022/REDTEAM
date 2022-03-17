@@ -1,22 +1,20 @@
 package main.java.com.cognizant.CogniCloth.jdbc;
 
 import java.sql.Statement;
-import main.java.com.cognizant.CogniCloth.dao.CategorySearchDao;
 import main.java.com.cognizant.CogniCloth.entityclasses.Category;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class JdbcCategorySearch implements CategorySearchDao
+public class JdbcCategorySearch implements CategoryDao
 {
 
 	public void create(Category c)
 	{
 		
 	}
-	public void select(Category c)
-	{
+	public void select(Category c) throws ClassNotFoundException, SQLException {
 		try 
 		{    
 		        Connection con = DBConnection.getConnection();
@@ -45,7 +43,7 @@ public class JdbcCategorySearch implements CategorySearchDao
 	}
 		
 	//Delete any items from selected category + deletes category itself
-	public void delete(Category c) {
+	public void delete(Category c) throws ClassNotFoundException, SQLException {
 		try 
 		{    
 		        Connection con = DBConnection.getConnection();
@@ -62,7 +60,7 @@ public class JdbcCategorySearch implements CategorySearchDao
 	}
 	
 	//Selects all products that are not in the selected category
-	public void remove(Category c) {
+	public void remove(Category c) throws ClassNotFoundException, SQLException {
 		try 
 		{    
 		        Connection con = DBConnection.getConnection();
