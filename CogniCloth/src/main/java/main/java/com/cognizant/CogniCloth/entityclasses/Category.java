@@ -41,6 +41,11 @@ public class Category {
 	public void setCategoryName(String categoryName) {
 		this.categoryName = categoryName;
 	}
+
+	public static void addToCategoryList(Category c) {
+		allCategories.add(c);
+	}
+
 	public static String getCategoryName(long id) {
 		for(Category c : allCategories) {
 			if(id == c.categoryID)
