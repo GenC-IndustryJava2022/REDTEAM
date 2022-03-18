@@ -1,9 +1,9 @@
-package main.java.com.cognizant.CogniCloth.jdbc;
+package com.cognizant.CogniCloth.jdbc;
 
 import java.sql.Statement;
 
-import main.java.com.cognizant.CogniCloth.dao.ProductDao;
 import main.java.com.cognizant.CogniCloth.entityclasses.Product;
+import main.java.com.cognizant.CogniCloth.jdbc.DBConnection;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -11,8 +11,7 @@ import java.sql.SQLException;
 
 
 
-public class JdbcProductSearch implements ProductDao 
-{	
+public class JdbcProductSearch {	
 	//Adds product to table
 	public void add(Product p) throws ClassNotFoundException, SQLException {
 		String productName;
