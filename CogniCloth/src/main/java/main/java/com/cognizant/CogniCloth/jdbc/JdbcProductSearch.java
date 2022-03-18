@@ -6,7 +6,6 @@ import main.java.com.cognizant.CogniCloth.dao.ProductDao;
 import main.java.com.cognizant.CogniCloth.entityclasses.Product;
 
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
@@ -14,11 +13,8 @@ import java.sql.SQLException;
 
 public class JdbcProductSearch implements ProductDao 
 {	
-	public void create(Product p)
-	{
-		
-	}
-	public void select(Product p) throws ClassNotFoundException, SQLException {
+	//Adds product to table
+	public void add(Product p) throws ClassNotFoundException, SQLException {
 		String productName;
 		try { 
 			Connection con = DBConnection.getConnection();
@@ -40,13 +36,30 @@ public class JdbcProductSearch implements ProductDao
 		}
 	}
 
+	//Returns the name of each product that matches the search
+	public void select(Product p) throws ClassNotFoundException, SQLException {
+		String productName;
+		try { 
+			Connection con = DBConnection.getConnection();
+			Statement smt = con.createStatement();
+			String sql = "SELECT * FROM Products WHERE productName LIKE %" + p.getProductName() + "%";
+			ResultSet r = smt.executeQuery(sql);
+			StringBuilder sb = new StringBuilder();
 
-	public void update(Product p)
-	{
-		
-		
+			while (r.next()) {
+				productName = r.getString("productName");
+				sb.append(productName);
+				sb.append(", ");
+			}
+			sb.delete(sb.length()-2, sb.length());
+			System.out.println(sb.toString());
+		}
+		catch(SQLException e ) {
+		  e.printStackTrace();
+		}
 	}
 		
+	//Deletes the product from the table
 	public void delete(Product p) throws ClassNotFoundException, SQLException {
 		try { 
 			Connection con = DBConnection.getConnection();
@@ -59,6 +72,7 @@ public class JdbcProductSearch implements ProductDao
 		}
 	}
 
+	//Prints out every product name except Product p
 	public void remove(Product p) throws ClassNotFoundException, SQLException {
 		try {    
 			Connection con = DBConnection.getConnection();

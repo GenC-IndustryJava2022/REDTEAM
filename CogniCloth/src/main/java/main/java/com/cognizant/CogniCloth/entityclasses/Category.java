@@ -19,12 +19,12 @@ public class Category {
 	@Column(name="categoryname",length=40)
 	private String categoryName;
 	
-	private static int currentID = 0;
+	private static int currentId = 0;
 	
 	private static List<Category> allCategories = new ArrayList<Category>();
 	
 	public Category(String categoryName) {
-		this.categoryID = ++currentID;
+		this.categoryID = ++currentId;
 		this.categoryName = categoryName;
 		allCategories.add(this);
 	}
@@ -41,6 +41,11 @@ public class Category {
 	public void setCategoryName(String categoryName) {
 		this.categoryName = categoryName;
 	}
+
+	public static void addToCategoryList(Category c) {
+		allCategories.add(c);
+	}
+
 	public static String getCategoryName(long id) {
 		for(Category c : allCategories) {
 			if(id == c.categoryID)
