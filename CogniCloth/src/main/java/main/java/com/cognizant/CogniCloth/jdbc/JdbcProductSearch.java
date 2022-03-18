@@ -6,7 +6,6 @@ import main.java.com.cognizant.CogniCloth.dao.ProductDao;
 import main.java.com.cognizant.CogniCloth.entityclasses.Product;
 
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
