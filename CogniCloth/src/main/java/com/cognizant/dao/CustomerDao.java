@@ -3,8 +3,8 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 
-import main.java.com.cognizant.entityclasses.Cart;
-import main.java.com.cognizant.entityclasses.Customer;
+import com.cognizant.entityclasses.Cart;
+import com.cognizant.entityclasses.Customer;
 
 public class CustomerDao {
 	
@@ -18,8 +18,5 @@ public class CustomerDao {
 		System.out.println(customer);
 		session.close();
 		return customer;
-	
-
-
-		
+	}
 }
