@@ -1,4 +1,4 @@
-package main.java.com.cognizant.CogniCloth.dao;
+package main.java.com.cognizant.dao;
 
 import java.util.List;
 
@@ -8,7 +8,7 @@ import org.hibernate.SessionFactory;
 import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
 
-import main.java.com.cognizant.CogniCloth.entityclasses.Cart;
+import main.java.com.cognizant.entityclasses.Cart;
 
 public class CartDao {
 	@Autowired

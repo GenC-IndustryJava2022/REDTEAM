@@ -1,4 +1,4 @@
-package main.java.com.cognizant.CogniCloth.entityclasses;
+package main.java.com.cognizant.entityclasses;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -6,6 +6,8 @@ import java.util.List;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 @Entity
 @Table(name="Category")
@@ -13,7 +15,8 @@ public class Category {
 	
 	@Id
 	
-	@Column(name="categoryid")
+	@OneToMany
+	@JoinColumn(name="categoryid")
 	private long categoryID;
 	
 	@Column(name="categoryname",length=40)

@@ -1,8 +1,10 @@
-package main.java.com.cognizant.CogniCloth.entityclasses;
+package main.java.com.cognizant.entityclasses;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -30,6 +32,18 @@ public class Customer {
 	@Column(name="state",length=15)
 	private String state;
 	
+	@ManyToOne
+	@JoinColumn(name="productid")
+	private long productid;
+	
+	public long getProductid()
+	{
+		return productid;
+	}
+
+	public void setProductid(long productid) {
+		this.productid = productid;
+	}
 	private static int idNumber = 0;
 	
 	public Customer() {

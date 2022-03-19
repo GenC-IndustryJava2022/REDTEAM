@@ -1,4 +1,4 @@
-package main.java.com.cognizant.CogniCloth.dao;
+package main.java.com.cognizant.dao;
 
 public class SupplierDao {
 

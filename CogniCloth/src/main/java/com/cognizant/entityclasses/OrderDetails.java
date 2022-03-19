@@ -1,8 +1,10 @@
-package main.java.com.cognizant.CogniCloth.entityclasses;
+package main.java.com.cognizant.entityclasses;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -11,8 +13,8 @@ import javax.persistence.Table;
 public class OrderDetails {
 	
 	@Id
-	
-	@Column(name="orderid")
+	@OneToMany
+	@JoinColumn(name="orderid")
 	private int orderID;
 	
 	@Column(name="productid")

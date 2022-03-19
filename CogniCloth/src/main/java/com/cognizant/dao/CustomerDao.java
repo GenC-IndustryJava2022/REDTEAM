@@ -1,9 +1,9 @@
-package main.java.com.cognizant.CogniCloth.dao;
+package main.java.com.cognizant.dao;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 
-import main.java.com.cognizant.CogniCloth.entityclasses.Customer;
+import main.java.com.cognizant.entityclasses.Customer;
 
 public class CustomerDao {
 	

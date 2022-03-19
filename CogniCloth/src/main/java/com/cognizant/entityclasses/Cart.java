@@ -1,10 +1,12 @@
-package main.java.com.cognizant.CogniCloth.entityclasses;
+package main.java.com.cognizant.entityclasses;
 
 import java.util.ArrayList;
 import java.util.List;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -13,7 +15,8 @@ import javax.persistence.Table;
 public class Cart {
 	@Id
 	
-	@Column(name="cartid",length=20)
+	@ManyToOne
+	@JoinColumn(name="cartid")
 	private long Cartid;
 	
 	@Column(name="customerid")
@@ -68,9 +71,4 @@ public class Cart {
 		return myCart.remove(p);
 	}
 
-	/*
-	 * public static void main(String[] args) { Customer c1 = new Customer();
-	 * System.out.println(c1.getCustomerID()); Customer c2 = new Customer();
-	 * System.out.println(c2.getCustomerID()); }
-	 */
 }

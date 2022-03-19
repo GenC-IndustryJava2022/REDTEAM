@@ -1,8 +1,10 @@
-package main.java.com.cognizant.CogniCloth.entityclasses;
+package main.java.com.cognizant.entityclasses;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -12,39 +14,51 @@ public class Supplier {
 	
 	@Id
 	@Column(name="supplierid")
-	private int supplierID;
+	private long SupplierID;
 	
-	@Column(name="companyname",length=40)
-	private String companyName;
+	@Column(name="companyname")
+	private String CompanyName;
 	
-    @Column(name="contactname",length=40)
-	private String contactName;
+	@ManyToOne
+	@JoinColumn(name="contactname")
+	private String ContactName;
 	
-	public Supplier() {
-		
+	@ManyToOne
+	@JoinColumn(name="productid")
+	private long productid;
+
+	public long getSupplierID() {
+		return SupplierID;
 	}
 
-	public int getSupplierID() {
-		return supplierID;
-	}
-
-	public void setSupplierID(int supplierID) {
-		this.supplierID = supplierID;
+	public void setSupplierID(long supplierID) {
+		SupplierID = supplierID;
 	}
 
 	public String getCompanyName() {
-		return companyName;
+		return CompanyName;
 	}
 
 	public void setCompanyName(String companyName) {
-		this.companyName = companyName;
+		CompanyName = companyName;
 	}
 
 	public String getContactName() {
-		return contactName;
+		return ContactName;
 	}
 
 	public void setContactName(String contactName) {
-		this.contactName = contactName;
+		ContactName = contactName;
 	}
+
+	public long getProductid() {
+		return productid;
+	}
+
+	public void setProductid(long productid) {
+		this.productid = productid;
+	}
+	
+	
+	
 }
