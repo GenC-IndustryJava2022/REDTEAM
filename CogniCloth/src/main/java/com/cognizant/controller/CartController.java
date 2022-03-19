@@ -5,7 +5,6 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
-
 import main.java.com.cognizant.dao.CartDao;
 import main.java.com.cognizant.entityclasses.Cart;
 
@@ -31,7 +30,7 @@ public class CartController
 	}
 	
 	//get single cart by id
-	@RequestMapping({"/cartlist/cartid"})
+	@RequestMapping({"/cartlist/cart"})
 	public void getCart(int id)
 	{
 		cartdao.getCartbyId(id);
@@ -39,13 +38,13 @@ public class CartController
 	}
 	
 	//delete single cart by id
-	@RequestMapping({"/cartlist/cartid/delete"})
+	@RequestMapping({"/cartlist/cart/delete"})
 	public void deletecart(int id)
 	{
 		cartdao.deletebyCartid(id);
 	}
 	
-	@RequestMapping({"/cartlist/cartid/insert"})
+	@RequestMapping({"/cartlist/cart/insert"})
 	public Cart insertCart(Cart cart) throws Exception
 	{
 		return cartdao.insert(cart);
