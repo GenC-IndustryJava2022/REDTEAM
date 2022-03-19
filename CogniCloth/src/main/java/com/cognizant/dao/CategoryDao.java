@@ -14,23 +14,26 @@ public class CategoryDao {
 	@Autowired
 	private SessionFactory sessionfactory;
 	
-	public Category getName(String title) {
-      Session session = this.sessionfactory.getCurrentSession();
-	  String sql="select c.CategoryName from "+Category.class.getName()+"c";
-	  Query<Category> q = session.createQuery(sql,Category.class);
-	  Category category = q.uniqueResult();
-	  return category;
+	public Category getName(String title) 
+	{
+	      Session session = this.sessionfactory.getCurrentSession();
+		  String sql="select c.CategoryName from "+Category.class.getName()+"c";
+		  Query<Category> q = session.createQuery(sql,Category.class);
+		  Category category = q.uniqueResult();
+		  return category;
 	}
 	
-	public List<Category> categorylist() {
-	  Session session = this.sessionfactory.getCurrentSession();
-	  String sql="select *from"+Category.class.getName();
-	  Query q = session.createQuery(sql,Category.class);
-	  List<Category> catlist = q.list();
-	  return catlist;
+	public List<Category> categorylist() 
+	{
+		  Session session = this.sessionfactory.getCurrentSession();
+		  String sql="select *from"+Category.class.getName();
+		  Query q = session.createQuery(sql,Category.class);
+		  List<Category> catlist = q.list();
+		  return catlist;
 	}	
 	 
-   public void updateCategory(Category category) {
+   public void updateCategory(Category category) 
+   {
 		  Session session = this.sessionfactory.getCurrentSession();
 		  session.update(category);	 
    }

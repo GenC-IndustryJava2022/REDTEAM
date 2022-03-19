@@ -19,23 +19,38 @@ public class CartDao {
 
 		try {
 			session.save(cart);
+			session.close();
 			return cart;
 		}
 		catch (HibernateException e) {
 			throw new Exception("Cannot save cart",e);
 		}
-	}
-	public void deletebyCartid(int id) {
-		Session session = this.sessionfactory.getCurrentSession();
-		session.delete("from " + Cart.class.getName() + " where id = " + id);
 		
 	}
+	
+	public void deletebyCartid(int id) 
+	{
+		Session session = this.sessionfactory.getCurrentSession();
+		session.delete("from " + Cart.class.getName() + " where id = " + id);
+		session.close();
+		
+	}
+	
+	public Cart getCartbyId(int cartid)
+	{
+		Session session = this.sessionfactory.getCurrentSession();
+		Cart cart =session.get(Cart.class,cartid);
+		System.out.println(cart);
+		session.close();
+		return cart;
+	}
 
-	public List<Cart> cartlist() {
-	Session session = this.sessionfactory.getCurrentSession();
-	Query q = session.createQuery("from "+Cart.class.getName());
-	List<Cart> cartlist = q.list();
-	return cartlist;
+	public List<Cart> cartlist() 
+	{
+		Session session = this.sessionfactory.getCurrentSession();
+		Query q = session.createQuery("from "+Cart.class.getName());
+		List<Cart> cartlist = q.list();
+		return cartlist;
 		
 	}
 }
