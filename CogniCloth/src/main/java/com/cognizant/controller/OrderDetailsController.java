@@ -1,10 +1,10 @@
-package main.java.com.cognizant.controller;
+package com.cognizant.controller;
 
 
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import main.java.com.cognizant.dao.OrderDetailsDao;
-import main.java.com.cognizant.entityclasses.OrderDetails;
+import com.cognizant.dao.OrderDetailsDao;
+import com.cognizant.entityclasses.OrderDetails;
 
 public class OrderDetailsController 
 {

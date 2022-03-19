@@ -1,12 +1,12 @@
-package main.java.com.cognizant.controller;
+package com.cognizant.controller;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import main.java.com.cognizant.dao.CustomerDao;
-import main.java.com.cognizant.entityclasses.Customer;
+import com.cognizant.dao.CustomerDao;
+import com.cognizant.entityclasses.Customer;
 
 @Controller
 public class CustomerController 

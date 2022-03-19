@@ -1,4 +1,4 @@
-package main.java.com.cognizant.controller;
+package com.cognizant.controller;
 
 
 import java.util.List;
@@ -7,8 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import main.java.com.cognizant.dao.CategoryDao;
-import main.java.com.cognizant.entityclasses.Category;
+import com.cognizant.dao.CategoryDao;
+import com.cognizant.entityclasses.Category;
 
 @Controller
 public class CategoryController

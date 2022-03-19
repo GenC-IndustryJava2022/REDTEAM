@@ -1,4 +1,4 @@
-package main.java.com.cognizant.entityclasses;
+package com.cognizant.entityclasses;
 
 import java.util.ArrayList;
 import java.util.List;

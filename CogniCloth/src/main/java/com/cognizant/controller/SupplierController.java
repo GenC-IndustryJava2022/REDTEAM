@@ -1,4 +1,4 @@
-package main.java.com.cognizant.controller;
+package com.cognizant.controller;
 
 public class SupplierController {
 

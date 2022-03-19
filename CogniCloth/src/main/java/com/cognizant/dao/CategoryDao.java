@@ -1,4 +1,4 @@
-package main.java.com.cognizant.dao;
+package com.cognizant.dao;
 
 import java.util.List;
 

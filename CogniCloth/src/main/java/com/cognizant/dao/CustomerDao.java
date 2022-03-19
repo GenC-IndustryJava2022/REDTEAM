@@ -1,4 +1,4 @@
-package main.java.com.cognizant.dao;
+package com.cognizant.dao;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
