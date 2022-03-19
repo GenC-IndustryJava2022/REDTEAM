@@ -7,8 +7,8 @@ import org.hibernate.SessionFactory;
 import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
 
-import main.java.com.cognizant.entityclasses.Category;
-import main.java.com.cognizant.entityclasses.Product;
+import com.cognizant.entityclasses.Category;
+import com.cognizant.entityclasses.Product;
 
 public final class ProductDao 
 {

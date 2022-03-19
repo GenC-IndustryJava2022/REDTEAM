@@ -1,11 +1,11 @@
-package main.java.com.cognizant.dao;
+package com.cognizant.dao;
 
 import org.hibernate.query.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 
-import main.java.com.cognizant.entityclasses.OrderDetails;
+import com.cognizant.entityclasses.OrderDetails;
 
 public class OrderDetailsDao {
 @Autowired
