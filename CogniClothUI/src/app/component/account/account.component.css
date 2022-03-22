@@ -1,0 +1,21 @@
+button {
+    background-color: #08023d;
+    color: white;
+    padding: 16px;
+    border-radius: 30px;
+    margin-left: 200px;
+    width: 100px;
+}
+
+input {
+    padding: 10px;
+    margin-bottom: 2px;
+    margin-top: 2px;
+}
+
+label {
+    width: 75px;
+    margin-left: 10px;
+    margin-right: 5px;
+    display: inline-block;
+}

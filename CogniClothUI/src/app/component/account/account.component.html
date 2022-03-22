@@ -1,1 +1,7 @@
-<p>account works!</p>
+<form *ngIf="!isLoggedIn">
+    <label>Username: </label><input [(ngModel)]="username" name="user"><br>
+    <label>Password: </label><input [(ngModel)]="password" name="pass"><br>
+    <button type="button" (click)="onLogin()">Login</button>
+</form>
+<div *ngIf="isLoggedIn">
+    <h3>Welcome, {{getUsername()}}!</h3>

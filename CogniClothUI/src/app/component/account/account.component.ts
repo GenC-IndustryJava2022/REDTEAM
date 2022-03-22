@@ -7,6 +7,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AccountComponent implements OnInit {
 
+  isLoggedIn = false;
+  username!:string;
+  password!:string;
+  onLogin() {
+    if(this.password != "" && this.username != "") {
+      this.isLoggedIn = true;
+      console.log(this.username);
+    }
+  }
+
+  getUsername() {
+    return this.username;
+  }
   constructor() { }
 
   ngOnInit(): void {
