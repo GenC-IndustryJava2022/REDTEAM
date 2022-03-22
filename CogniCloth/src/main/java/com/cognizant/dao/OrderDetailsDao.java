@@ -7,6 +7,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import com.cognizant.entityclasses.OrderDetails;
 
+import org.springframework.stereotype.*;
+
+//@Service
 public class OrderDetailsDao {
 @Autowired
 private SessionFactory sessionfactory;

@@ -2,43 +2,46 @@ package com.cognizant.controller;
 
 import java.util.List;
 
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
+
 
 import com.cognizant.dao.ProductDao;
 import com.cognizant.entityclasses.Product;
 
+@RestController
+@RequestMapping("/product")
 public class ProductController 
 {
-	    private ProductDao productdao;
+	 //   private ProductDao productdao;
 		//home
-		@RequestMapping("/")
+		/*@RequestMapping("/")
 		public String home()
 		{
 			return "index";
-		}
+		}*/
 		
 		//get product list
-		@RequestMapping({"/productlist"})
+	 /*   @GetMapping({"/productlist"})
 		public  List<Product> getproductlist()
 		{
 			return productdao.productlist();
 		}
 		
 		//get product by id
-		@RequestMapping({"/productlist/product"})
-		public Product getProduct(int id)
+	    @GetMapping({"/getProduct/{id}"})
+		public Product getProduct(@PathVariable int id)
 		{
 			return productdao.getProduct(id);
 			
 		}
 		
 		// delete product by id
-		@RequestMapping({"/productlist/product/delete"})
-		public void deleteProduct(int id)
+	    @DeleteMapping({"/deleteProduct/{id}"})
+		public void deleteProduct(@PathVariable int id)
 		{
 			productdao.deleteProduct(id);
 		}
 		
-		
+		*/
 }
 		

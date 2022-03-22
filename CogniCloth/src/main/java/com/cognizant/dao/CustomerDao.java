@@ -2,21 +2,18 @@ package com.cognizant.dao;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-
-import com.cognizant.entityclasses.Cart;
+import org.springframework.stereotype.*;
 import com.cognizant.entityclasses.Customer;
+import com.cognizant.repository.CustomerRepository;
 
+@Service
 public class CustomerDao {
 	
 	@Autowired
-	private SessionFactory sessionfactory;
+	private CustomerRepository customerRepository;
 
 	public Customer getCustomerbyId(int custid)
 	{
-		Session session = this.sessionfactory.getCurrentSession();
-		Customer customer =session.get(Customer.class,custid);
-		System.out.println(customer);
-		session.close();
-		return customer;
+		return customerRepository.getById((long)custid);
 	}
 }
