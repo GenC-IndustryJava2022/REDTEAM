@@ -14,6 +14,10 @@ export class ProductsComponent implements OnInit {
 
   prods !: Product[];
 
+  addProduct() {
+    
+  }
+
   ngOnInit(): void {
   }
 
