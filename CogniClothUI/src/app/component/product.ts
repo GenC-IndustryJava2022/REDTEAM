@@ -1,5 +1,5 @@
 export class Product {
-    
+
     constructor(
         public productId : number,
         public supplierId : number,
@@ -9,5 +9,4 @@ export class Product {
         public categoryId : number
     )
     {}
-
 }
