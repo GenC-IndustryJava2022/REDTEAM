@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { catchError, map } from 'rxjs/operators';
@@ -8,10 +8,27 @@ import { Product } from './product';
   providedIn: 'root'
 })
 export class ProductService {
+  
+  constructor(private httpClient:HttpClient) {
+
+  }
+
 
   prods !: Product[];
+
+  //TO DO: ADD IN BASE URL
   private baseURL: string = "";
-  constructor(private httpClient:HttpClient) { }
+  postHeader = {
+    headers : new HttpHeaders({
+      'Content-Type': 'application/json'
+    })
+  };
+
+  addProduct(product : Product):boolean {
+    this.httpClient.post<Product>(this.baseURL+"cart",product, this.postHeader)
+    .subscribe(res =>{}, (err)=>{console.log(err)})
+    return true;
+  }
 
   getAllProducts():Observable<Product[]> {
     return this.httpClient.get<Product[]>(this.baseURL+"/products").pipe(map(response=>{

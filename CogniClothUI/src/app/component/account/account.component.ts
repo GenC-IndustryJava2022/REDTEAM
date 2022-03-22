@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AccountService } from './account.service';
 
 @Component({
   selector: 'app-account',
@@ -10,6 +11,7 @@ export class AccountComponent implements OnInit {
   isLoggedIn = false;
   username!:string;
   password!:string;
+  
   onLogin() {
     if(this.password != "" && this.username != "") {
       this.isLoggedIn = true;
@@ -26,3 +28,4 @@ export class AccountComponent implements OnInit {
   }
 
 }
+
