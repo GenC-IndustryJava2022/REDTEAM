@@ -1,8 +1,15 @@
-<div class="card-top-container-fluid">
-    <div class="item"></div>
-    <div class="item"></div>
-    <div class="item"></div>
-    <div class="item"></div>
-</div>
+<div *ngFor="let prod of prods">
 
-<button>Add Product</button>   <button>Remove Product</button>
+    <p>
+        <a [routerLink]="['/products', prod.productId]">
+            <span class="bg-dark">{{ prod.productName }}</span>
+        </a>
+    </p>
+</div>
+<!-- <div class="card-top-container-fluid">
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+</div> -->
+<button>Add Product</button><button>Remove Product</button>

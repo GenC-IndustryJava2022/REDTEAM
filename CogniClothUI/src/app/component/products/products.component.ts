@@ -1,4 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+import { Product } from '../product';
+import { HttpClient } from '@angular/common/http';
+import { catchError, map } from 'rxjs/operators';
+
 
 @Component({
   selector: 'app-products',
@@ -7,7 +12,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProductsComponent implements OnInit {
 
-  constructor() { }
+  prods !: Product[];
 
   ngOnInit(): void {
   }
