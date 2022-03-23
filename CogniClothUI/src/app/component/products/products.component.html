@@ -1,15 +1,23 @@
-<div *ngFor="let prod of prods">
+<body style="background-image: url('assets/mountain.jpeg'); background-size: 100% 100%; background-attachment: fixed;">
 
-    <p>
-        <a [routerLink]="['/products', prod.productId]">
-            <span class="bg-dark">{{ prod.productName }}</span>
-        </a>
-    </p>
-</div>
+    <div *ngFor="let prod of prods">
+
+        <p>
+            <a [routerLink]="['/products', prod.productId]">
+                <span class="bg-dark">{{ prod.productName }}</span>
+            </a>
+        </p>
+    </div>
+
+    <button (click)="addProduct()">Add Product</button>
+    <button>Remove Product</button>
+
+</body>
+
+
 <!-- <div class="card-top-container-fluid">
     <div class="item"></div>
     <div class="item"></div>
     <div class="item"></div>
     <div class="item"></div>
 </div> -->
-<button (click)="addProduct()">Add Product</button><button>Remove Product</button>

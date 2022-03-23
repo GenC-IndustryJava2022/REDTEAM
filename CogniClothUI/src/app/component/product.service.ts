@@ -17,17 +17,26 @@ export class ProductService {
   prods !: Product[];
 
   //TO DO: ADD IN BASE URL
-  private baseURL: string = "";
+  private baseURL: string = "jdbc:mysql://localhost:3306/cogniclothdb";
   postHeader = {
     headers : new HttpHeaders({
       'Content-Type': 'application/json'
     })
   };
 
-  addProduct(product : Product):boolean {
+  addProductToCart(product : Product):boolean {
     this.httpClient.post<Product>(this.baseURL+"cart",product, this.postHeader)
     .subscribe(res =>{}, (err)=>{console.log(err)})
     return true;
+  }
+
+  getAllProductsFromCart():Observable<Product[]> {
+    return this.httpClient.get<Product[]>(this.baseURL+"/cart").pipe(map(response=>{
+      this.prods = response;
+      return response;
+    }), catchError(this.handleError<any>())
+    
+    );
   }
 
   getAllProducts():Observable<Product[]> {

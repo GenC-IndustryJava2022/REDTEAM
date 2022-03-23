@@ -12,6 +12,7 @@ import { catchError, map } from 'rxjs/operators';
 })
 export class ProductsComponent implements OnInit {
 
+  constructor(){}
   prods !: Product[];
 
   addProduct() {

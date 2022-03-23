@@ -3,4 +3,15 @@ button {
     color: white;
     padding: 16px;
     border-radius: 30px;
+    margin-left: 2px;
+    margin-right: 2px;
+}
+
+body {
+    height: 94.2vh;
+    text-align: center;
+    text-shadow: 2px 2px pink;
+    color: #ffffff;
+    font-size: x-large;
+    font-family: serif;
 }

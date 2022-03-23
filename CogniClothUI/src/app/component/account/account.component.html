@@ -1,7 +1,9 @@
-<form *ngIf="!isLoggedIn">
-    <label>Username: </label><input [(ngModel)]="username" name="user"><br>
-    <label>Password: </label><input [(ngModel)]="password" name="pass"><br>
-    <button type="button" (click)="onLogin()">Login</button>
-</form>
-<div *ngIf="isLoggedIn">
-    <h3>Welcome, {{getUsername()}}!</h3>
+<body style="background-image: url('assets/mountain2.jpeg'); background-size: 100% 100%; background-attachment: fixed;">
+    <form *ngIf="!isLoggedIn">
+        <label>Username: </label><input [(ngModel)]="username" name="user"><br>
+        <label>Password: </label><input [(ngModel)]="password" name="pass"><br>
+        <button type="button" (click)="onLogin()">Login</button>
+    </form>
+    <div *ngIf="isLoggedIn">
+        <h3>Welcome, {{getUsername()}}!</h3>
+
