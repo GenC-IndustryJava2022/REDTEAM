@@ -3,6 +3,7 @@ import { Observable } from 'rxjs';
 import { Product } from '../product';
 import { HttpClient } from '@angular/common/http';
 import { catchError, map } from 'rxjs/operators';
+import { ProductService } from '../product.service';
 
 
 @Component({
@@ -12,8 +13,13 @@ import { catchError, map } from 'rxjs/operators';
 })
 export class ProductsComponent implements OnInit {
 
-  constructor(){}
   prods !: Product[];
+
+  constructor(private productService : ProductService) {
+    this.productService.getAllProducts().subscribe(
+      response => this.prods = response
+    );
+  }
 
   addProduct() {
     

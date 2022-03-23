@@ -9,12 +9,15 @@ import { ProductService } from '../product.service';
 })
 export class CartComponent implements OnInit {
 
-  cartprods !: Product[];
+  cartProds !: Product[];
 
   //************TO DO************
   //adding anything into constructor is causing errors - find out why
 
-  constructor() { 
+  constructor(private productService : ProductService) { 
+    this.productService.getAllProductsFromCart().subscribe(
+      response => this.cartProds = response
+    );
   }
 
   ngOnInit(): void {

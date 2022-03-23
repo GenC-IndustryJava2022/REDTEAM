@@ -9,29 +9,26 @@ import { Product } from './product';
 })
 export class ProductService {
   
-  constructor(private httpClient:HttpClient) {
-
-  }
-
+  constructor(private httpClient:HttpClient) {}
 
   prods !: Product[];
 
-  //TO DO: ADD IN BASE URL
-  private baseURL: string = "jdbc:mysql://localhost:3306/cogniclothdb";
   postHeader = {
     headers : new HttpHeaders({
       'Content-Type': 'application/json'
     })
   };
 
-  addProductToCart(product : Product):boolean {
-    this.httpClient.post<Product>(this.baseURL+"cart",product, this.postHeader)
+  private baseURL : string = "jdbc:mysql://localhost:3306/cogniclothdb";
+
+  addProductToCart(product:Product):boolean {
+    this.httpClient.post<Product>(this.baseURL+"/cart",product, this.postHeader)
     .subscribe(res =>{}, (err)=>{console.log(err)})
     return true;
   }
 
   getAllProductsFromCart():Observable<Product[]> {
-    return this.httpClient.get<Product[]>(this.baseURL+"/cart").pipe(map(response=>{
+    return this.httpClient.get<Product[]>(this.baseURL+"/products").pipe(map(response=>{
       this.prods = response;
       return response;
     }), catchError(this.handleError<any>())
@@ -40,12 +37,14 @@ export class ProductService {
   }
 
   getAllProducts():Observable<Product[]> {
-    return this.httpClient.get<Product[]>(this.baseURL+"/products").pipe(map(response=>{
-      this.prods = response;
-      return response;
-    }), catchError(this.handleError<any>())
+    return this.httpClient.get<Product[]>(this.baseURL+"/products").pipe(map(response=>
+      {
+        this.prods = response;
+        return response; 
+      }), 
+      catchError(this.handleError<any>())
     
-    );
+      );
   }
 
   getProductById(prodId:string) : Product | undefined {
