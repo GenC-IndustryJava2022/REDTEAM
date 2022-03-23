@@ -7,50 +7,36 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.*;
 
 import com.cognizant.entityclasses.Cart;
+import com.cognizant.repository.CartRepository;
 
+@Service
 public class CartDao {
+	
 	@Autowired
-	private SessionFactory sessionfactory;
+	private CartRepository cartRepository;
 
 	public Cart insert(Cart cart) throws Exception
-	{	Session session = this.sessionfactory.getCurrentSession();
-
-		try {
-			session.save(cart);
-			session.close();
-			return cart;
-		}
-		catch (HibernateException e) {
-			throw new Exception("Cannot save cart",e);
-		}
-		
+	{	
+		return cartRepository.save(cart);
 	}
 	
 	public void deletebyCartid(int id) 
 	{
-		Session session = this.sessionfactory.getCurrentSession();
-		session.delete("from " + Cart.class.getName() + " where id = " + id);
-		session.close();
+		cartRepository.deleteById((long)id);
 		
 	}
 	
 	public Cart getCartbyId(int cartid)
 	{
-		Session session = this.sessionfactory.getCurrentSession();
-		Cart cart =session.get(Cart.class,cartid);
-		System.out.println(cart);
-		session.close();
-		return cart;
+		return cartRepository.findById((long)cartid).get();
 	}
 
 	public List<Cart> cartlist() 
 	{
-		Session session = this.sessionfactory.getCurrentSession();
-		Query q = session.createQuery("from "+Cart.class.getName());
-		List<Cart> cartlist = q.list();
-		return cartlist;
+		return cartRepository.findAll();
 		
 	}
 }

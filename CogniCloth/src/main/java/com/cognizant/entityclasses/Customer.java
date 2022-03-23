@@ -15,7 +15,7 @@ public class Customer {
 	@Id
 	
 	@Column(name="customerid",length=5)
-	private String customerID;
+	private Long customerID;
 	
 	@Column(name="companyname",length=40)
 	private String companyName;
@@ -47,13 +47,13 @@ public class Customer {
 	private static int idNumber = 0;
 	
 	public Customer() {
-		customerID = String.format("%06d",++idNumber);
+		//customerID = String.format("%06d",++idNumber);
 	}
 	
-	public String getCustomerID() {
+	public Long getCustomerID() {
 		return customerID;
 	}
-	public void setCustomerID(String customerID) {
+	public void setCustomerID(Long customerID) {
 		this.customerID = customerID;
 	}
 	public String getCompanyName() {

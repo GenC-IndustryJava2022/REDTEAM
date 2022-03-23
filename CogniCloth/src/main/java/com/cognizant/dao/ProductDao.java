@@ -6,10 +6,11 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.*;
 
-import com.cognizant.entityclasses.Category;
 import com.cognizant.entityclasses.Product;
 
+//@Service
 public final class ProductDao 
 {
 	@Autowired
@@ -19,7 +20,7 @@ public final class ProductDao
 	{
 		  Session session = this.sessionFactory.getCurrentSession();
 		  String sql="select *from"+Product.class.getName();
-		  Query q = session.createQuery(sql,Product.class);
+		  Query<Product> q = session.createQuery(sql,Product.class);
 		  List<Product> productlist = q.list();
 		  return productlist;
 	}	

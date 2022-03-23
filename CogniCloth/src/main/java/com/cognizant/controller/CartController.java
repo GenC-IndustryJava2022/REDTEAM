@@ -5,11 +5,17 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
+
+import org.springframework.web.bind.annotation.RestController;
+
 import com.cognizant.entityclasses.Cart;
 import com.cognizant.dao.CartDao;
 
-@Controller
+@RestController
+@RequestMapping("/cart")
 public class CartController 
 {
 
@@ -17,36 +23,36 @@ public class CartController
 	private CartDao cartdao;
 	
 	//home
-	@RequestMapping("/")
+	/*@RequestMapping("/")
 	public String home()
 	{
 		return "index";
 	}
-	
+	*/
 	//cart list
-	@RequestMapping({"/cartlist"})
+	@GetMapping({"/getCartList"})
 	public List<Cart> Cartlist()
 	{
 		return cartdao.cartlist();
 	}
 	
 	//get single cart by id
-	@RequestMapping({"/cartlist/cart"})
-	public void getCart(int id)
+	@GetMapping({"/getCart/{id}"})
+	public void getCart(@PathVariable int id)
 	{
 		cartdao.getCartbyId(id);
 		
 	}
 	
 	//delete single cart by id
-	@RequestMapping({"/cartlist/cart/delete"})
-	public void deletecart(int id)
+	@GetMapping({"/deleteCart/{id}"})
+	public void deletecart(@PathVariable int id)
 	{
 		cartdao.deletebyCartid(id);
 	}
 	
-	@RequestMapping({"/cartlist/cart/insert"})
-	public Cart insertCart(Cart cart) throws Exception
+	@PostMapping({"insertCart"})
+	public Cart insertCart(@RequestBody Cart cart) throws Exception
 	{
 		return cartdao.insert(cart);
 	}
