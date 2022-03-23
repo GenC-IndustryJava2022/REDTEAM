@@ -48,7 +48,7 @@ export class ProductService {
     );
   }
 
-  getProductById(prodId:number) : Product | undefined {
+  getProductById(prodId:string) : Product | undefined {
     return this.prods.find(x=>x.productId == prodId);
   }
 

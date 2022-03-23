@@ -12,7 +12,7 @@ export class CartComponent implements OnInit {
   cartprods !: Product[];
 
   //************TO DO************
-  //Code below is causing error with routing - find out why
+  //adding anything into constructor is causing errors - find out why
 
   constructor() { 
   }

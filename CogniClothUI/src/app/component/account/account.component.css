@@ -1,7 +1,7 @@
 body {
     height: 94.2vh;
     text-align: center;
-    text-shadow: 2px 2px rgb(0, 133, 22);
+    text-shadow: 2px 2px #08023d;
     color: #ffffff;
     font-size: x-large;
     font-family: serif;
@@ -22,7 +22,7 @@ input {
     margin-top: 2px;
 }
  
-  label { 
+label { 
     width: 100px;
     margin-left: 10px;
     margin-right: 5px;
