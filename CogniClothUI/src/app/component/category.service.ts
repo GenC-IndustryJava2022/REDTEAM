@@ -16,7 +16,8 @@ export class CategoryService {
       new Category('3', 'Shorts'),
       new Category('4', 'Hats'),
       new Category('5', 'Dresses'),
-      new Category('6', 'Skirts')
+      new Category('6', 'Skirts'),
+      new Category('7', 'Socks')
     ];
   }
 
