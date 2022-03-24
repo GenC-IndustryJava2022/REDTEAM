@@ -5,3 +5,7 @@ describe('Product', () => {
     expect(new Product('-1', -1, -1, "", "", -1)).toBeTruthy();
   });
 });
+function expect(arg0: Product) {
+  throw new Error('Function not implemented.');
+}
+
