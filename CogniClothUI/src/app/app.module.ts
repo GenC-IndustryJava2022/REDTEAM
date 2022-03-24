@@ -20,7 +20,7 @@ import { HttpClientModule } from '@angular/common/http';
     NavBarComponent,
     ProductsComponent,
     HomeComponent,
-    ProductDetailsComponent
+    ProductDetailsComponent,
   ],
   imports: [
     BrowserModule,
@@ -32,4 +32,4 @@ import { HttpClientModule } from '@angular/common/http';
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}
