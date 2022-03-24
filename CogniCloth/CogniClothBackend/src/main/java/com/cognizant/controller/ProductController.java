@@ -1,13 +1,19 @@
 package com.cognizant.controller;
 
 
+import java.util.List;
+
 import org.springframework.web.bind.annotation.*;
+import com.cognizant.dao.ProductDao;
+import com.cognizant.entityclasses.Product;
+
 
 @RestController
+@CrossOrigin
 @RequestMapping("/product")
 public class ProductController 
 {
-	 //   private ProductDao productdao;
+	   private ProductDao productdao;
 		//home
 		/*@RequestMapping("/")
 		public String home()
@@ -16,7 +22,7 @@ public class ProductController
 		}*/
 		
 		//get product list
-	 /*   @GetMapping({"/productlist"})
+	   @GetMapping({"/productlist"})
 		public  List<Product> getproductlist()
 		{
 			return productdao.productlist();
@@ -37,6 +43,6 @@ public class ProductController
 			productdao.deleteProduct(id);
 		}
 		
-		*/
+		
 }
 		
