@@ -1,1 +1,14 @@
-<p>category works!</p>
+<body style="background-image: url('assets/background-photos/mountain.jpeg'); background-size: 100% 100%; background-attachment: fixed;">
+
+    <div *ngFor="let cat of cats">
+
+        <p>
+            <a [routerLink]="['/category', cat.categoryId]">
+                <span class="bg-dark">{{ cat.categoryName }}</span>
+            </a>
+        </p>
+    </div>
+
+    <!-- <button (click)="addProduct()">Add Product</button> -->
+
+</body>

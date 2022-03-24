@@ -31,15 +31,19 @@ export class CategoryService {
     })
   };
 
-  getAllProducts():Observable<Category[]> {
-    return this.httpClient.get<Category[]>(this.baseURL+"/categories").pipe(map(response=>
-      {
-        this.cats = response;
-        return response; 
-      }), 
-      catchError(this.handleError<any>())
+  // getAllCategories():Observable<Category[]> {
+  //   return this.httpClient.get<Category[]>(this.baseURL+"/categories").pipe(map(response=>
+  //     {
+  //       this.cats = response;
+  //       return response; 
+  //     }), 
+  //     catchError(this.handleError<any>())
     
-      );
+  //     );
+  // }
+
+  getAllCategories():Category[] {
+    return this.cats;
   }
 
   getCategoryById(catId:string) : Category | undefined {

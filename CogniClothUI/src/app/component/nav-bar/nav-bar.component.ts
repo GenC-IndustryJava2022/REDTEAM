@@ -15,11 +15,11 @@ export class NavBarComponent implements OnInit {
     
   }
 
-  constructor(private productService: ProductService) { 
-    this.productService.getAllProducts().subscribe(
-      response => this.prods = response
-    )
-  }
+  // constructor(private productService: ProductService) { 
+  //   this.productService.getAllProducts().subscribe(
+  //     response => this.prods = response
+  //   )
+  // }
 
   ngOnInit(): void {
   }

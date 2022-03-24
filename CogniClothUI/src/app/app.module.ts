@@ -11,6 +11,7 @@ import { ProductsComponent } from './component/products/products.component';
 import { HomeComponent } from './component/home/home.component';
 import { ProductDetailsComponent } from './component/product-details/product-details.component';
 import { HttpClientModule } from '@angular/common/http';
+import { CategoryComponent } from './component/category/category.component';
 
 @NgModule({
   declarations: [
@@ -21,11 +22,12 @@ import { HttpClientModule } from '@angular/common/http';
     ProductsComponent,
     HomeComponent,
     ProductDetailsComponent,
+    CategoryComponent
   ],
   imports: [
+    AppRoutingModule,
     BrowserModule,
     HttpClientModule,
-    AppRoutingModule,
     FormsModule,
     ReactiveFormsModule
   ],

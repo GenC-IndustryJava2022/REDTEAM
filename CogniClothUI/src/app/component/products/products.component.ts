@@ -14,15 +14,35 @@ import { ProductService } from '../product.service';
 export class ProductsComponent implements OnInit {
 
   prods !: Product[];
+  selectedItems !: Product[];
+  lastSelectedItem !: Product;
+
+  // constructor(private productService : ProductService) {
+  //   this.productService.getAllProducts().subscribe(
+  //     response => this.prods = response
+  //   );
+  // }
 
   constructor(private productService : ProductService) {
-    this.productService.getAllProducts().subscribe(
-      response => this.prods = response
-    );
+    this.selectedItems = [];
+    this.prods = productService.getAllProducts();
   }
 
-  addProduct() {
-    
+  addProduct(prod : Product) {
+    this.selectedItems.push(prod);
+    this.lastSelectedItem = prod;
+  }
+
+  removeLastProduct() {
+    this.selectedItems.pop()
+    if(this.selectedItems.length > 0)
+      this.lastSelectedItem = this.selectedItems[this.selectedItems.length-2];
+  }
+
+  addToCart() {
+    this.selectedItems.forEach(function(value) {
+      console.log(value.productId);
+    });
   }
 
   ngOnInit(): void {

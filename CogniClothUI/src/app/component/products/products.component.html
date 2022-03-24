@@ -3,13 +3,17 @@
     <div *ngFor="let prod of prods">
 
         <p>
-            <a [routerLink]="['/products', prod.productId]">
-                <span class="bg-dark">{{ prod.productName }}</span>
-            </a>
+            <img src="./assets/clothing-photos/{{prod.productName}}.jpg">
+            <!-- <a [routerLink]="['/products', prod.productName]">-->
+            <!-- <a (click)="addProduct()"> -->
+            <span class="bg-dark">{{ prod.productName }} ${{prod.unitPrice.toFixed(2)}}</span>
+            <button (click)="addProduct(prod)"></button>
+            <!-- </a> -->
         </p>
     </div>
-
-    <button (click)="addProduct()">Add Product</button>
+    <br>
+    <!-- <button (click)="addToCart()">Undo (last product: {{this.lastSelectedItem.productName}})</button> -->
+    <button (click)="addToCart()">Add Products</button>
 
 </body>
 
