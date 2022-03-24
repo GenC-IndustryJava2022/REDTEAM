@@ -2,9 +2,11 @@ package com.cognizant.controller;
 
 import org.springframework.boot.web.servlet.error.ErrorController;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 @Controller
+@CrossOrigin
 public class AppErrorController implements ErrorController{
     private final static String PATH = "/error";
     @RequestMapping(PATH)

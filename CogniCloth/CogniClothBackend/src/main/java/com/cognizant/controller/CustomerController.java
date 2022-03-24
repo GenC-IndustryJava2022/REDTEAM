@@ -9,6 +9,7 @@ import com.cognizant.dao.CustomerDao;
 import com.cognizant.entityclasses.Customer;
 
 @RestController
+@CrossOrigin
 @RequestMapping("/customer")
 public class CustomerController 
 {

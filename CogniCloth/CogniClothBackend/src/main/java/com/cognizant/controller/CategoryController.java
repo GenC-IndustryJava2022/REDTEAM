@@ -12,7 +12,8 @@ import com.cognizant.dao.CategoryDao;
 import com.cognizant.entityclasses.Category;
 
 @RestController
-@RequestMapping("/category")
+@CrossOrigin
+@RequestMapping("/categories")
 public class CategoryController
 {
 
@@ -51,7 +52,7 @@ private CategoryDao catdao;
 	}
 	
 	// get category from category list
-	@GetMapping({"/categoryDisplay/{categotytitle}"})
+	@GetMapping({"/categoryDisplay/{categorytitle}"})
 	public Category categoryDisplay(@PathVariable int categorytitle)
 	{
 		return catdao.getName(categorytitle);

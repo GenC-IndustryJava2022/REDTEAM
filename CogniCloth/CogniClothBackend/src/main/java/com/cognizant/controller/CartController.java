@@ -14,6 +14,7 @@ import com.cognizant.entityclasses.Cart;
 import com.cognizant.dao.CartDao;
 
 @RestController
+@CrossOrigin
 @RequestMapping("/cart")
 public class CartController 
 {
