@@ -33,15 +33,15 @@ export class ProductsComponent implements OnInit {
     this.lastSelectedItem = prod;
   }
 
-  removeLastProduct() {
-    this.selectedItems.pop()
-    if(this.selectedItems.length > 0)
-      this.lastSelectedItem = this.selectedItems[this.selectedItems.length-2];
-  }
+  // removeLastProduct() {
+  //   this.selectedItems.pop()
+  //   if(this.selectedItems.length > 0)
+  //     this.lastSelectedItem = this.selectedItems[this.selectedItems.length-2];
+  // }
 
   addToCart() {
     this.selectedItems.forEach(function(value) {
-      console.log(value.productId);
+      console.log(value.productDescription);
     });
   }
 

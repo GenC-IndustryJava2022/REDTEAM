@@ -9,15 +9,18 @@ button {
 
 body {
     height: 94.2vh;
-    text-align: center;
+    place-items: center; 
+    /* text-align: ; */
     /* text-shadow: 2px 2px pink; */
     color: #ffffff;
     font-size: x-large;
     font-family: serif;
+    background-color: rgb(35, 0, 116);
 }
 
 img {
     width: 100px;
+    margin-right: 20px;
     height: auto;
     filter: opacity(80%);
 }

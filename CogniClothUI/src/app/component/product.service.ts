@@ -25,7 +25,7 @@ export class ProductService {
   constructor(private httpClient : HttpClient) {
     this.prods = [
       new Product('1', 1, 4.50, 'blue-jeans', 'a pair of blue jeans', 1),
-      new Product('2', 1, 4.50, 'black-dress', 'a pair of blue jeans', 1),
+      new Product('2', 1, 4.50, 'black-dress', 'a black dress', 1),
       new Product('3', 1, 4.50, 'blue jeans', 'a pair of blue jeans', 1),
       new Product('4', 1, 4.50, 'blue jeans', 'a pair of blue jeans', 1),
       new Product('5', 1, 4.50, 'blue jeans', 'a pair of blue jeans', 1),
