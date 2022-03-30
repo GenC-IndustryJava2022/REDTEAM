@@ -14,11 +14,11 @@ export class CartComponent implements OnInit {
   //************TO DO************
   //adding anything into constructor is causing errors - find out why
 
-  constructor(private productService : ProductService) { 
-    this.productService.getAllProductsFromCart().subscribe(
-      response => this.cartProds = response
-    );
-  }
+  // constructor(private productService : ProductService) { 
+  //   this.productService.getAllProductsFromCart().subscribe(
+  //     response => this.cartProds = response
+  //   );
+  // }
 
   ngOnInit(): void {
     // this.productService.getAllProductsFromCart().subscribe(

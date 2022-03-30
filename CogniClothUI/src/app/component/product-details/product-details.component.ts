@@ -14,12 +14,12 @@ export class ProductDetailsComponent implements OnInit {
 
   constructor(private routes : ActivatedRoute, private productService : ProductService) { }
 
-    getProduct():void {
-      this.prod = this.productService.getProductById(this.routes.snapshot.paramMap.get('id')!)!;
-    }
+    // getProduct():void {
+    //   this.prod = this.productService.getProductById(this.routes.snapshot.paramMap.get('id')!)!;
+    // }
 
   ngOnInit(): void {
-    this.getProduct();
+    // this.getProduct();
   }
 
 }

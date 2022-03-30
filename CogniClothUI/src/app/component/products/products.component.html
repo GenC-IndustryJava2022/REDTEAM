@@ -1,23 +1,30 @@
-<!-- background-image: url('assets/background-photos/clouds.JPG'); -->
-<body style="background-size: 100% 100%; background-attachment: fixed;">
+<body *ngIf="isAddedToCart()" style="background-image: url('assets/background-photos/green-leaf.jpeg'); background-size: 100% 100%; background-attachment: fixed;">
+    <div class="row">
+        <div class="col-3" *ngFor="let prod of prods">
+            <p>
+                <input type="image" src="./assets/clothing-photos/{{prod.productName}}.jpg" (click)="addProduct(prod)">
+                <!-- <a [routerLink]="['/products', prod.productName]">-->
+                <!-- <a (click)="addProduct()"> -->
+                <span class="bg-dark">{{ prod.productName }} ${{prod.price}}0</span>
+                <!-- <button (click)="addProduct(prod)"></button> -->
+                <!-- </a> -->
 
-    <div *ngFor="let prod of prods">
-
-        <p>
-            <img src="./assets/clothing-photos/{{prod.productName}}.jpg">
-            <!-- <a [routerLink]="['/products', prod.productName]">-->
-            <!-- <a (click)="addProduct()"> -->
-            <span class="bg-dark">{{ prod.productName }} ${{prod.unitPrice.toFixed(2)}}</span>
-            <button (click)="addProduct(prod)"></button>
-            <!-- </a> -->
-        </p>
+            </p>
+        </div>
     </div>
     <br>
     <!-- <button (click)="addToCart()">Undo (last product: {{this.lastSelectedItem.productName}})</button> -->
     <button (click)="addToCart()">Add Products</button>
-
 </body>
 
+<form *ngIf="!isAddedToCart()" style="background-image: url('assets/background-photos/green-leaf.jpeg'); background-size: 100% 100%; background-attachment: fixed;"> 
+    <h2>Your Items: </h2>
+    <div *ngFor="let prod of this.selectedItems">
+        {{prod.productName}} ${{prod.price}}0
+    </div>
+    <h2>Total Price: </h2>
+    ${{calculateTotalPrice()}}
+</form>
 
 <!-- <div class="card-top-container-fluid">
     <div class="item"></div>

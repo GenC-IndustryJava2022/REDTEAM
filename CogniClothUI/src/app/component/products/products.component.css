@@ -9,18 +9,41 @@ button {
 
 body {
     height: 94.2vh;
-    place-items: center; 
+    /* place-items: center;  */
     /* text-align: ; */
     /* text-shadow: 2px 2px pink; */
+    /* padding-left: 15px; */
     color: #ffffff;
     font-size: x-large;
     font-family: serif;
     background-color: rgb(35, 0, 116);
 }
 
+form {
+    height: 94.2vh;
+    /* place-items: center;  */
+    /* text-align: ; */
+    /* text-shadow: 2px 2px pink; */
+    /* padding-left: 15px; */
+    color: #ffffff;
+    font-size: x-large;
+    font-family: serif;
+    background-color: rgb(35, 0, 116);
+    padding-left: 10px;
+}
+
+
+input {
+    width: 125px;
+    text-align: center;
+    margin-right: 15px;
+    height: auto;
+    filter: opacity(80%);
+}
+
 img {
     width: 100px;
-    margin-right: 20px;
+    margin-right: 15px;
     height: auto;
     filter: opacity(80%);
 }
