@@ -10,42 +10,42 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 @Entity
-@Table(name="product")
+@Table(name="PRODUCTS")
 
 public class Product
 {
-	@Id
-	private static int currentID = 0;
 	
-	@Column(name="productid")
+	@Id
+	@Column(name="PRODUCTID")
 	private int productID;
-	@OneToMany
-	@JoinColumn(name="supplierid")
+	
+//	@OneToMany
+//	@JoinColumn(name="supplierid")
 	private int supplierID;
 	
-	@OneToMany
-	@JoinColumn(name="categoryid")
+//	@OneToMany
+//	@JoinColumn(name="categoryid")
+	@Column(name="CATEGORYID")
 	private long categoryID;
 	
-	@Column(name="unitprice")
+	@Column(name="UNITPRICE")
 	private float price;
 	
-	@Column(name="productname",length=40)
+	@Column(name="PRODUCTNAME",length=40)
 	private String productName;
 	
-	@Column(name="productdescription",length=40)
+	@Column(name="PRODUCTDESCRIPTION",length=40)
 	private String productDescription;
 	
 	private static List<Product> allProducts = new ArrayList<Product>();
 	
 	public Product() 
 	{
-		this.productID = ++currentID;
-		allProducts.add(this);
+		
 	}
 	
 	public Product(int supplierID, long categoryID, float price, String productName,
-			String productDescription) 
+			String productDescription, int productID) 
 	{
 		super();
 		this.supplierID = supplierID;
@@ -53,8 +53,7 @@ public class Product
 		this.price = price;
 		this.productName = productName;
 		this.productDescription = productDescription;
-		this.productID = ++currentID;
-		allProducts.add(this);
+		this.productID = productID;
 	}
 	
 	@Override

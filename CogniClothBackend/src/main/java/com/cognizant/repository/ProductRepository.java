@@ -5,7 +5,7 @@ import org.springframework.stereotype.Repository;
 
 import com.cognizant.entityclasses.Product;
 
-@Repository
+
 public interface ProductRepository extends JpaRepository <Product, String>{
 
 }

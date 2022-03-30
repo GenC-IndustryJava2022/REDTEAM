@@ -1,5 +1,5 @@
 package com.cognizant.controller;
 
-public class SupplierController {
-
-}
+//public class SupplierController {
+//
+//}
